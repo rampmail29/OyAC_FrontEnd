@@ -1,0 +1,30 @@
+.inputColor {
+    background-color: #269D9E;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.inputColor2 {
+background-color: blue;
+border-radius: 5px;
+padding: 10px;
+}
+
+.inputColor3 {
+background-color: red;
+border-radius: 5px;
+padding: 10px;
+
+}
+
+input {
+    padding: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+}

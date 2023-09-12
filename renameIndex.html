@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <!--Librerias (frameworks)-------------------------------------------------------------------------------->
+    <!--jQuery-->
+    <script type="text/javascript" src="./jquery/jquery-3.3.1.min.js"></script>
+    <!--Bootstrap con material desing-->
+    <link rel="stylesheet" type="text/css" href="./bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./bootstrap/mdb.css">
+    <script type="text/javascript" src="./bootstrap/bootstrap.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="./css/temas.css">
+    <!--Necesario para el shake effect-->
+    <script type="text/javascript" src="./jquery/jquery-ui.js"></script>
+    <!--typehead, para usar el autocompletar que funciona con Bootstrap3-->
+    <script language="JavaScript" type="text/javascript" src="./typeahead/bootstrap3-typeahead.js"></script>
+   <!--libreria para usar ya que permite que solo se digiten numeros en los input-->
+    <script language="JavaScript" type="text/javascript" src="./jquery/jquery.numeric.js"></script>
+    <!--Sweetalert2-->
+    <script language="JavaScript" type="text/javascript" src="./sweetalert2/sweetalert2.js"></script>
+    <script type="text/javascript" lang="javascript" src="./javascript/ricardo.js"></script>
+</head>
+
+<body>
+    <!-- COMENTARIO -->
+    <!-- NUEVO COMENTARIO -->
+    <!-- NUEVO COMENTARIO 2 -->
+
+    <hr>
+    <br>
+    <label for="input_nombre">INGRESE NOMBRE</label><br>
+
+    <!-- APLICO LA CLASE INPUT COLOR AL INPUT -->
+    <input class="form-control" class="inputColor" type="text" name="nombre_cliente" id="nombre_cliente">
+    <hr>
+    <br>
+    <label for="input_numero_documento">INGRESE NÚMERO DOCUMENTO</label>
+    <input class="form-control" placeholder="Ingrese número documento" type="number" name="input_numero_documento"
+        id="input_numero_documento">
+    <hr>
+    <br>
+    <label for="input_nombre">INGRESE FECHA</label>
+    <input class="form-control" type="date" placeholder="Ingrese fecha" name="input_fecha" id="input_fecha">
+    <br><hr>
+    <button class="button" type="button" onclick="ricardo()">GUARDAR</button>
+</body>
+<footer></footer>
+
+</html>
