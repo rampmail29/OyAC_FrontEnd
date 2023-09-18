@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Librerias (frameworks)-------------------------------------------------------------------------------->
+    <!--jQuery-->
+    <script type="text/javascript" src="./jquery/jquery-3.3.1.min.js"></script>
+    <!--Bootstrap con material desing-->
+    <link rel="stylesheet" type="text/css" href="./bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./bootstrap/mdb.css">
+    <script type="text/javascript" src="./bootstrap/bootstrap.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="./css/temas.css">
+    <!--Necesario para el shake effect-->
+    <script type="text/javascript" src="./jquery/jquery-ui.js"></script>
+    <!--typehead, para usar el autocompletar que funciona con Bootstrap3-->
+    <script language="JavaScript" type="text/javascript" src="./typeahead/bootstrap3-typeahead.js"></script>
+    <!--libreria para usar ya que permite que solo se digiten numeros en los input-->
+    <script language="JavaScript" type="text/javascript" src="./jquery/jquery.numeric.js"></script>
+    <!--Sweetalert2-->
+    <script language="JavaScript" type="text/javascript" src="./sweetalert2/sweetalert2.js"></script>
+
+</head>
+
+<body>
+    <!--seccion para modals-->
+    <div class="container" id="div_seccion_clientes" style="display:block;">
+        <div class="row">
+            <div class="col-md-12" style="background-color: #c9f0e8 ">
+                <!-- se agrego una clase .col en temas.css para que los botones no aparecieran tan separados-->
+                <br>
+                <label class="titulos_en_panel_de_control">FORMATOS DE INGRESO</label>
+                <br>
+            </div>
+        </div>
+        <div class="row" style="background-color: #d2dde4">
+            <div class="col-md-4">
+                <img src="./img/client.png" height="50px" width="50px">
+                <button type="button" class="btn btn-info" data-toggle="modal"
+                    onclick="limpiarCamposModalCrearCliente()" data-target="#modal_crear_cliente">CREAR CLIENTE</button>
+            </div>
+        </div>
+    </div>
+    <!--MODALS * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+
+    <!-- Modal crear cliente***************** -->
+    <!-- ... (encabezado y otros elementos) ... -->
+
+    <!-- Modal crear cliente -->
+    <div class="container">
+        <div class="modal fade" id="modal_crear_cliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <!-- ... (otros elementos del modal) ... -->
+            <style>
+                .label_azul {
+                    color: rgb(13, 205, 160);
+                }
+            </style>
+
+            <div class="modal-body" align="center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 my-auto-header">
+                            <label class="label_azul">INFORMACIÓN CLIENTE</label>
+                        </div>
+
+                        <div class="col-md-12 my-auto">
+
+                            <label for="nombre_cliente">Nombre</label>
+
+                            <style>
+                                label{
+
+                                    color: white;
+                                }
+                            </style>
+                            
+                            <input class="form-control inputColor" type="text" name="nombre_cliente"
+                                id="nombre_cliente">
+                            <hr>
+
+                            <!-- Agregar más campos de datos aquí -->
+                            <label for="apellido_cliente">Apellido</label>
+                            <input class="form-control" type="text" name="apellido_cliente" id="apellido_cliente">
+                            <hr>
+
+                            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                            <input class="form-control" type="date" name="fecha_nacimiento" id="fecha_nacimiento">
+                            <hr>
+
+                            <label for="direccion">Dirección</label>
+                            <input class="form-control" type="text" name="direccion" id="direccion">
+                            <hr>
+
+                            <label for="correo_electronico">Correo Electrónico</label>
+                            <input class="form-control" type="email" name="correo_electronico" id="correo_electronico">
+                            <hr>
+
+                            <label for="telefono">Teléfono</label>
+                            <input class="form-control" type="tel" name="telefono" id="telefono">
+                            <hr>
+
+                            <label for="ciudad">Ciudad</label>
+                            <input class="form-control" type="text" name="ciudad" id="ciudad">
+                            <hr>
+
+                            <label for="pais">País</label>
+                            <input class="form-control" type="text" name="pais" id="pais">
+                            <hr>
+
+                            <label for="profesion">Profesión</label>
+                            <input class="form-control" type="text" name="profesion" id="profesion">
+                            <hr>
+
+                            <label>Comentarios:</label>
+                            <textarea id="textarea_comentarios_crear_lote"></textarea>
+                        </div>
+
+                        <br>
+                        <hr>
+                        <button id="boton_guardar_cliente" class="btn-primary btn-sm form-control" type="button"
+                            onclick="ricardo()"><img src="./img/client.png" height="30px"
+                                width="30px"></img>GUARDAR</button>
+                        <div id="div_estado_guardar_cliente"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- ... (otros elementos del modal) ... -->
+        </div>
+    </div>
+    <!-- ... (pie de página y otros elementos) ... -->
+
+</body>
+<script type="text/javascript" lang="javascript" src="./javascript/ricardo.js"></script>
+<footer></footer>
+
+</html>
