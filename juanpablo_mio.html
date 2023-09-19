@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FAVICON -->
+    <link rel="icon" href="./img/aguardiente.png" sizes="50x50"/>
+
+    <!--Librerias (frameworks)-------------------------------------------------------------------------------->
+    <!--jQuery-->
+    <script type="text/javascript" src="./jquery/jquery-3.3.1.min.js"></script>
+    <!--Bootstrap con material desing-->
+    <link rel="stylesheet" type="text/css" href="./bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./bootstrap/mdb.css">
+    <script type="text/javascript" src="./bootstrap/bootstrap.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="./css/temas.css">
+    <!--Necesario para el shake effect-->
+    <script type="text/javascript" src="./jquery/jquery-ui.js"></script>
+    <!--typehead, para usar el autocompletar que funciona con Bootstrap3-->
+    <script language="JavaScript" type="text/javascript" src="./typeahead/bootstrap3-typeahead.js"></script>
+    <!--libreria para usar ya que permite que solo se digiten numeros en los input-->
+    <script language="JavaScript" type="text/javascript" src="./jquery/jquery.numeric.js"></script>
+    <!--Sweetalert2-->
+    <script language="JavaScript" type="text/javascript" src="./sweetalert2/sweetalert2.js"></script>
+    
+</head>
+
+<body>
+    <!--seccion para modals-->
+    <div class="container" id="div_seccion_clientes" style="display:block;">
+        <div class="row">
+            <div class="col-md-12" style="background-color: #c9f0e8 ">
+              <!-- se agrego una clase .col en temas.css para que los botones no aparecieran tan separados-->
+              <br>
+              <label class="titulos_en_panel_de_control">FORMATOS DE INGRESO</label>
+              <br>
+            </div>
+          </div>
+        <div class="row" style="background-color: #d2dde4">
+            <div class="col-md-4">
+                <img src="./img/client.png" height="50px" width="50px">
+                <button type="button" class="btn btn-info" data-toggle="modal"
+                    onclick="limpiarCamposModalCrearCliente()" data-target="#modal_crear_cliente">CREAR CLIENTE</button>
+            </div>
+        </div>
+    </div>
+    <!--MODALS * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+
+    <!-- Modal crear cliente***************** -->
+    <div class="container">
+        <div class="modal fade" id="modal_crear_cliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <label class="modal-title">FORMATO CREACIÓN CLIENTE</label>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="table-wrapper">
+                        <div class="modal-body" align="center">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 my-auto-header">
+                                        <label class="label_azul">INFORMACIÓN CLIENTE</label>
+                                    </div>
+                                    <div class="col-md-12 my-auto">
+                                        <label for="input_nombre">INGRESE NOMBRE</label><br>
+
+                                        <!-- APLICO LA CLASE INPUT COLOR AL INPUT -->
+                                        <input class="form-control inputColor" type="text" name="nombre_cliente"
+                                            id="nombre_cliente">
+                                        <hr>
+                                        <br>
+                                        <label for="input_numero_documento">INGRESE NÚMERO DOCUMENTO</label>
+                                        <input class="form-control" placeholder="Ingrese número documento" type="number"
+                                            name="input_numero_documento" id="input_numero_documento">
+                                        <hr>
+                                        <br>
+                                        <label for="input_nombre">INGRESE FECHA</label>
+                                        <input class="form-control" type="date" placeholder="Ingrese fecha"
+                                            name="input_fecha" id="input_fecha">
+                                        <br>
+                                        <hr>                                        
+                                        <label>COMENTARIOS:</label>
+                                        <textarea id="textarea_comentarios_crear_lote"></textarea>
+                                    </div>
+                                    <br>
+                                    <hr>
+                                    <button id="boton_guardar_cliente" class="btn-primary btn-sm form-control" type="button"
+                                            onclick="ricardo()"><img src="./img/licor.png" height="30px"
+                                            width="30px"></img>GUARDAR</button>
+                                    <div id="div_estado_guardar_cliente"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="boton_cerrar_modal" type="button" class="btn btn-default"
+                                data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" lang="javascript" src="./javascript/juanpablo_mio.js"></script>
+<footer></footer>
+
+</html>
