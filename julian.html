@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/client.png" sizes="50*50">
 
     <!--Librerias (frameworks)-------------------------------------------------------------------------------->
     <!--jQuery-->
@@ -63,6 +64,8 @@
             </style>
 
             <div class="modal-body" align="center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 my-auto-header">
@@ -74,12 +77,12 @@
                             <label for="nombre_cliente">Nombre</label>
 
                             <style>
-                                label{
+                                label {
 
                                     color: white;
                                 }
                             </style>
-                            
+
                             <input class="form-control inputColor" type="text" name="nombre_cliente"
                                 id="nombre_cliente">
                             <hr>
@@ -124,7 +127,7 @@
                         <br>
                         <hr>
                         <button id="boton_guardar_cliente" class="btn-primary btn-sm form-control" type="button"
-                            onclick="ricardo()"><img src="./img/client.png" height="30px"
+                            onclick="julian()"><img src="./img/client.png" height="30px"
                                 width="30px"></img>GUARDAR</button>
                         <div id="div_estado_guardar_cliente"></div>
                     </div>
@@ -136,7 +139,7 @@
     <!-- ... (pie de página y otros elementos) ... -->
 
 </body>
-<script type="text/javascript" lang="javascript" src="./javascript/ricardo.js"></script>
+<script type="text/javascript" lang="javascript" src="./javascript/julian.js"></script>
 <footer></footer>
 
 </html>
