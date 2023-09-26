@@ -51,8 +51,7 @@ function jp() {
     edad: 39,
     genero: "masculino",
   };
-
-  console.log("🚀 ~ file: ricardo.js:21 ~ datos:", datos);
+  console.log("🚀 ~ file: juanpablo_mio.js:54 ~ jp ~ datos:", datos)
   Swal.fire(
     "Datos guardados con éxito!",
     "Se han guardado los datos correctamente",
