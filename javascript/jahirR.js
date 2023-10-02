@@ -1,4 +1,4 @@
-function jahirR() {
+async function jahirR() {
     //alert ("función de ricardo ejecutándose!")
     /* DIFERENCIA ENTRE var - let - const */
     /* foreach - map - filter - find */
@@ -105,13 +105,44 @@ function jahirR() {
       console.log("🚀 ~ file: jahirR.js:95 ~ jahirR ~ datos:", datos)
     }  
   
-    /*  *
-    console.log("🚀 ~ file: ricardo.js:21 ~ datos:", datos);
-    Swal.fire(
-      "Datos guardados con éxito!",
-      "Se han guardado los datos correctamente",
-      "success"
-    );*/
+   /* API WEB PARA ENVIAR DATOS AL BACKEND */
+  const url = "http://localhost:4000/api/";
+  const fetchConfig = {
+    method: 'POST',
+    cache: 'no-cache',
+    headers:{
+      'Content-Type':'aplication/json'
+    },
+    body:JSON.stringify(datos)
+  };
+
+  try {
+    const rta = await fetch(url, fetchConfig);
+    console.log("rta: ".rta);
+    if (rta.status === 200) {
+      Swal.fire(
+        "Datos actualizados con éxito",
+        "Se actualizaron los datos del afiliado",
+        "success"
+      );
+    } else if (rta.status === 204) {
+      Swal.fire(
+        "No se actualizaron los datos del afiliado.",
+        "Sin cambios en el registro del afiliado.",
+        "info"
+      );
+    } else if (rta.status === 400) {
+      const errorResponse = await rta.json();
+      console.error(errorResponse.message);
+      Swal.fire("Ya existe un afiliado con número de documento", "", "warning");
+    } else {
+      console.error("Error en la respuesta del servidor:", rta.status);
+      Swal.fire("Error de respuesta del servidor.", "", "error");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    Swal.fire("Hubo un error en la solicitud.", "", "error");
+  }
   }
   function mostrarAlerta ( valor, titulo, texto, icono){
   
