@@ -4,36 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./img/client.png" sizes="50*50">
 
-    <!--Librerias (frameworks)-------------------------------------------------------------------------------->
-    <!--jQuery-->
-    <script type="text/javascript" src="./jquery/jquery-3.3.1.min.js"></script>
-    <!--Bootstrap con material desing-->
+    <!-- Librerías (frameworks) -->
     <link rel="stylesheet" type="text/css" href="./bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./bootstrap/mdb.css">
+    <script type="text/javascript" src="./jquery/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="./bootstrap/bootstrap.min.js"></script>
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <link rel="stylesheet" href="./css/temas.css">
-    <!--Necesario para el shake effect-->
     <script type="text/javascript" src="./jquery/jquery-ui.js"></script>
-    <!--typehead, para usar el autocompletar que funciona con Bootstrap3-->
     <script language="JavaScript" type="text/javascript" src="./typeahead/bootstrap3-typeahead.js"></script>
-    <!--libreria para usar ya que permite que solo se digiten numeros en los input-->
     <script language="JavaScript" type="text/javascript" src="./jquery/jquery.numeric.js"></script>
-    <!--Sweetalert2-->
     <script language="JavaScript" type="text/javascript" src="./sweetalert2/sweetalert2.js"></script>
 
+    <!-- Estilos personalizados -->
+    <style>
+        /* Estilos personalizados aquí */
+        body {
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-title {
+            font-size: 24px;
+        }
+
+        .label_azul {
+            color: #007bff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .form-control.inputColor {
+            border: 2px solid #007bff;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
-    <!--seccion para modals-->
+    <!-- Sección para modals -->
     <div class="container" id="div_seccion_clientes" style="display:block;">
         <div class="row">
             <div class="col-md-12" style="background-color: #c9f0e8 ">
-                <!-- se agrego una clase .col en temas.css para que los botones no aparecieran tan separados-->
                 <br>
                 <label class="titulos_en_panel_de_control">FORMATOS DE INGRESO</label>
                 <br>
@@ -47,111 +82,127 @@
             </div>
         </div>
     </div>
-    <!--MODALS * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 
-    <!-- Modal crear cliente******* -->
-    <!-- ... (encabezado y otros elementos) ... -->
+    <!-- MODALS -->
 
     <!-- Modal crear cliente -->
     <div class="container">
         <div class="modal fade" id="modal_crear_cliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
-            <!-- ... (otros elementos del modal) ... -->
-            <style>
-                .label_azul {
-                    color: rgb(13, 205, 160);
-                }
-            </style>
-
-            <div class="modal-body" align="center">
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-
-                <div class="container">
-
-                    <div class="row">
-                        <div class="col-md-12 my-auto-header">
-                            <label class="label_azul">INFORMACIÓN CLIENTE</label>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <label class="modal-title">FORMATO CREACIÓN CLIENTE</label>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="table-wrapper">
+                        <div class="modal-body" align="center">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 my-auto-header">
+                                        <label class="label_azul">INFORMACIÓN CLIENTE</label>
+                                    </div>
+                                    <div class="col-md-12 my-auto">
+                                        <form id="clienteForm">
+                                            <div class="form-group">
+                                                <label for="nombre_cliente">NOMBRE</label>
+                                                <input class="form-control inputColor" type="text" name="nombre_cliente"
+                                                    id="nombre_cliente">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input_numero_documento">NÚMERO DE DOCUMENTO</label>
+                                                <input class="form-control" type="number"
+                                                    name="input_numero_documento" id="input_numero_documento">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input_fecha">FECHA</label>
+                                                <input class="form-control" type="date" name="input_fecha" id="input_fecha">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input_sector_salud">SECTOR DE SALUD</label>
+                                                <input class="form-control" placeholder="Ingrese el sector de salud" type="text"
+                                                    name="input_sector_salud" id="input_sector_salud">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="textarea_comentarios_crear_lote">COMENTARIOS:</label>
+                                                <textarea id="textarea_comentarios_crear_lote" name="textarea_comentarios_crear_lote"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input_dato_salud_1">Condicion Actual</label>
+                                                <input class="form-control" type="text" name="input_dato_salud_1"
+                                                    id="input_dato_salud_1">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input_dato_salud_2">Sintomas</label>
+                                                <input class="form-control" type="text" name="input_dato_salud_2"
+                                                    id="input_dato_salud_2">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input_dato_salud_3">recetas adquiridas</label>
+                                                <input class="form-control" type="text" name="input_dato_salud_3"
+                                                    id="input_dato_salud_3">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input_dato_salud_4">numero de seguro social</label>
+                                                <input class="form-control" type="text" name="input_dato_salud_4"
+                                                    id="input_dato_salud_4">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input_dato_salud_5">Dato de Salud 5</label>
+                                                <input class="form-control" type="text" name="input_dato_salud_5"
+                                                    id="input_dato_salud_5">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input_dato_salud_6">Dato de Salud 6</label>
+                                                <input class="form-control" type="text" name="input_dato_salud_6"
+                                                    id="input_dato_salud_6">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input_dato_salud_7">Dato de Salud 7</label>
+                                                <input class="form-control" type="text" name="input_dato_salud_7"
+                                                    id="input_dato_salud_7">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input_dato_salud_8">Dato de Salud 8</label>
+                                                <input class="form-control" type="text" name="input_dato_salud_8"
+                                                    id="input_dato_salud_8">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input_dato_salud_9">Dato de Salud 9</label>
+                                                <input class="form-control" type="text" name="input_dato_salud_9"
+                                                    id="input_dato_salud_9">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input_dato_salud_10">Dato de Salud 10</label>
+                                                <input class="form-control" type="text" name="input_dato_salud_10"
+                                                    id="input_dato_salud_10">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <br>
+                                    <hr>
+                                    <button id="boton_guardar_cliente" class="btn-primary btn-sm form-control" type="button"
+                                            onclick="jahirR()"><img src="./img/client.png" height="30px"
+                                            width="30px"></img>GUARDAR</button>
+                                    <div id="div_estado_guardar_cliente"></div>
+                                </div>
+                            </div>
                         </div>
-
-
-                        <div class="col-md-12 my-auto">
-
-                            <label for="nombre_cliente">Nombre</label>
-
-                            <style>
-                                label {
-
-                                    color: white;
-                                }
-                            </style>
-
-                            <input class="form-control inputColor" type="text" name="nombre_cliente"
-                                id="nombre_cliente">
-                            <hr>
-
-                            <!-- Agregar más campos de datos aquí -->
-                            <label for="apellido_cliente">Apellido</label>
-                            <input class="form-control" type="text" name="apellido_cliente" id="apellido_cliente">
-                            <hr>
-
-                            
-                            <label for="profesion">Documento</label>
-                            <input class="form-control" type="text" name="profesion" id="nDocumento">
-                            <hr>
-
-                            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-                            <input class="form-control" type="date" name="fecha_nacimiento" id="fecha_nacimiento">
-                            <hr>
-
-                            <label for="direccion">Dirección</label>
-                            <input class="form-control" type="text" name="direccion" id="direccion">
-                            <hr>
-
-                            <label for="correo_electronico">Correo Electrónico</label>
-                            <input class="form-control" type="email" name="correo_electronico" id="correo_electronico">
-                            <hr>
-
-                            <label for="telefono">Teléfono</label>
-                            <input class="form-control" type="tel" name="telefono" id="telefono">
-                            <hr>
-
-                            <label for="ciudad">Ciudad</label>
-                            <input class="form-control" type="text" name="ciudad" id="ciudad">
-                            <hr>
-
-                            <label for="pais">País</label>
-                            <input class="form-control" type="text" name="pais" id="pais">
-                            <hr>
-
-                            <label for="profesion">Profesión</label>
-                            <input class="form-control" type="text" name="profesion" id="profesion">
-                            <hr>
-
-                            <label>Comentarios:</label>
-                            <textarea id="textarea_comentarios_crear_lote"></textarea>
-
-
+                        <div class="modal-footer">
+                            <button id="boton_cerrar_modal" type="button" class="btn btn-default"
+                                data-dismiss="modal">Cerrar</button>
                         </div>
-
-                        <br>
-                        <hr>
-                        <button id="boton_guardar_cliente" class="btn-primary btn-sm form-control" type="button"
-                            onclick="jahirR()"><img src="./img/client.png" height="30px"
-                                width="30px"></img>GUARDAR</button>
-                        <div id="div_estado_guardar_cliente"></div>
                     </div>
                 </div>
             </div>
-            <!-- ... (otros elementos del modal) ... -->
         </div>
     </div>
-    <!-- ... (pie de página y otros elementos) ... -->
 
+    <!-- JavaScript -->
+    <script type="text/javascript" lang="javascript" src="./javascript/jahirR.js"></script>
+    <footer></footer>
 </body>
-<script type="text/javascript" lang="javascript" src="./javascript/jahirR.js"></script>
-<footer></footer>
 
 </html>
 

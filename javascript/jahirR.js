@@ -106,7 +106,7 @@ async function jahirR() {
     }  
   
    /* API WEB PARA ENVIAR DATOS AL BACKEND */
-  const url = "http://localhost:4000/api/";
+  const url = "http://localhost:4000/api/cliente";
   const fetchConfig = {
     method: 'POST',
     cache: 'no-cache',
